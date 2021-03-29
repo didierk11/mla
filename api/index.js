@@ -19,7 +19,6 @@ app.get('/api/items', function (req, res) {
         const array = obj.results
         const items = []
         const filters = obj.filters
-        // const availableFilters = obj.available_filters
         let array2
         let array3
         const categories = []
