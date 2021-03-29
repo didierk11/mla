@@ -1,7 +1,9 @@
 const express = require('express')
+const cors = require('cors') // only for test / dev
 const app = express()
+app.use(cors()); // This is CORS-enabled for all origins
 const https = require('https')
-const port = 3000
+const port = 3001
 
 let itemDescription
 const root = 'https://api.mercadolibre.com/'

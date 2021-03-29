@@ -25,7 +25,7 @@ const Search = () => {
     () => {
       setLoading(true);
       axios
-        .get("http://localhost:3000/api/items", {
+        .get("http://localhost:3001/api/items", {
           params: {
             q: searchValue,
           },
