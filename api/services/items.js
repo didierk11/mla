@@ -52,16 +52,15 @@ const getItemList = async function (q) {
 
 const getItemDetails = async function (id) {
   try {
+
+    const response2 = await axios.get(
+      config.api.baseURL + config.api.item + id
+    );
     const response1 = await axios.get(
       config.api.baseURL +
       config.api.item +
         id +
         config.api.description
-    );
-    let itemDescription = response1.data.plain_text;
-
-    const response2 = await axios.get(
-      config.api.baseURL + config.api.item + id
     );
 
     let result = {
@@ -81,7 +80,7 @@ const getItemDetails = async function (id) {
         condition: response2.data.condition,
         free_shipping: response2.data.shipping.free_shipping,
         sold_quantity: response2.data.sold_quantity,
-        description: itemDescription,
+        description: response1.data.plain_text,
       },
     };
     return result;

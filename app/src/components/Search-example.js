@@ -7,20 +7,6 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  /*
-  useEffect(() => {
-      const search = async () => {
-        const {response} = await axios.get('http://localhost:3000/api/items', {
-            params: {
-                q: searchValue
-            },
-        })
-        setResults(response.data.items);
-        }
-        search()
-    }, [searchValue], [setResults]);
-    */
-
   useEffect(
     () => {
       setLoading(true);
@@ -53,17 +39,16 @@ const Search = () => {
             {item.price.amount}.{item.price.decimals} {item.price.currency}
           </span>
         </p>
-        <img
+        <img className="img"
           alt="imagen del producto"
           src={item.picture}
-          height="100px"
-          width="100px"
         ></img>
       </div>
     );
   });
 
   return (
+    
     <div>
       <div className="form">
         <div className="form-control">
