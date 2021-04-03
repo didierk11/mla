@@ -95,7 +95,7 @@ $mla-blue: #3483FA;
 .item-list-price{
   margin-top:16px;
   margin-bottom: 32px;;
-  font-size:18px;
+  font-size:24px;
 }
 .item-list-img{
   float: left;
@@ -103,14 +103,60 @@ $mla-blue: #3483FA;
   border-radius: 4px;
   margin: 16px;
 }
+
+
+
+.item-detail-sold-quantity{
+  font-size:12px;
+}
+.item-detail-title{
+  font-size: 24px;
+  // font-weight:600px;
+  line-height: 1.05;
+}
+.item-detail-price{
+  font-size: 46px;
+}
+.item-detail-buy-btn{
+  margin-top: 32px;
+  margin-right: 32px;
+  padding: 12px 24px;
+  width: 100%;
+  color: #fff;
+  background-color: $mla-blue;
+  border-radius: 2px;
+  border:0;
+  text-align: center;
+  font-size: 14px;
+
+}
+.item-detail-description{
+  margin-top: 32px;
+  margin-left: 32px;
+}
+.item-detail-description-title{
+   font-size: 28px;;
+}
+.item-detail-description-text{
+  margin-bottom: 32px;
+  font-size:16px;
+  color:$mla-gray;
+}
+.item-detail-img{
+  width: 680px;
+  margin-left: 32px;
+}
 .item-cat{
   font-size: 14px;
   color:$mla-gray;
   margin-top: 16px;
   margin-bottom: 16px;;
 }
+.item-detail{
+  background-color: white;
+}
 body{
   margin: 0px;
   background-color: $mla-white;
-  font-family: Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }

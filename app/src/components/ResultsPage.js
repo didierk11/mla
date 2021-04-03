@@ -5,6 +5,14 @@ import SearchBar from "./SearchBar";
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
+  
+  function PriceFormat(amount, currency, style) {
+    let obj = new Intl.NumberFormat("de-DE", {
+      style: style,
+      currency: currency,
+    });
+    return obj.format(amount);
+  }
 
   function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -22,7 +30,8 @@ const ResultsPage = () => {
           ></img>
           <div className="item-list-data">
             <div className="item-list-price">
-              {item.price.currency} ${item.price.amount}
+            $ { PriceFormat(item.price.amount, item.price.currency, "decimal")}
+              {/* {item.price.currency} ${item.price.amount} */}
               {item.price.decimals > 0 && (
                 <sup>.{item.price.decimals}</sup>
               )}{" "}
@@ -65,7 +74,6 @@ const ResultsPage = () => {
       <div className="container-fluid">
         <div className="row">
         <div className="col-1"></div>
-
           <div className="col-11">
             <div className="item-cat">
               {query.get("search")}

@@ -2,10 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import utils from "../utils/utils";
 
 const DetailsPage = () => {
   const [results, setResults] = useState(null);
   let { id } = useParams();
+
+  function PriceFormat(amount, currency, style) {
+    let obj = new Intl.NumberFormat("de-DE", {
+      style: style,
+      currency: currency,
+    });
+    return obj.format(amount);
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -22,23 +31,67 @@ const DetailsPage = () => {
     fetchData();
   }, []);
 
+  // let price = PriceFormat(results.price.amount, results.price.currency, "decimal");
+  // console.log(PriceFormat(results.price.amount, results.price.currency, "decimal"));
   return (
     <div>
       <SearchBar />
-      <div>Detalle del producto seleccionado</div>
-      <div>{id}</div>
+      {/* <div>Detalle del producto seleccionado</div>
+      <div>{id}</div> */}
       {results && (
-        <div>
-          <div>{results.condition === 'new' ? "Nuevo" : "Usado"} - {results.sold_quantity} Vendidos</div>
-          <div>{results.title}</div>
-          <div>
-            {results.price.amount}.{results.price.decimals}{" "}
-            {results.price.currency}
+        <div className="container">
+          <div className="item-cat">
+            {id}
+            {" > "}
+            {id}
+            {" > "}
+            {id}
           </div>
-          <div>
-            <img src={results.picture} alt="imagen"></img>
+          <div className="item-detail">
+            <div className="row">
+              <div className="col-8">
+                <img
+                  src={results.picture}
+                  className="item-detail-img"
+                  alt="imagen del producto"
+                ></img>
+              </div>
+              <div className="col-3">
+                <div className="item-details-new-sold-quantity">
+                  {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
+                  {results.sold_quantity} Vendidos
+                </div>
+                <div className="item-detail-title">{results.title}</div>
+                <div className="item-detail-price">
+                  ${" "}
+                  {PriceFormat(
+                    results.price.amount,
+                    results.price.currency,
+                    "decimal"
+                  )}
+                  {/* {results.price.currency} ${results.price.amount} */}
+                  {results.price.decimals > 0 && (
+                    <sup>.{results.price.decimals}</sup>
+                  )}
+                </div>
+                <div>
+                  <button className="item-detail-buy-btn">Comprar</button>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-8 item-detail-description">
+                <p className="item-detail-description-title">
+                  Descripción del Producto
+                </p>
+                <p className="item-detail-description-text">
+                  {results.description
+                    ? results.description
+                    : "El vendedor no proporcionó una descripción."}
+                </p>
+              </div>
+            </div>
           </div>
-          <button>Comprar</button>
         </div>
       )}
     </div>
