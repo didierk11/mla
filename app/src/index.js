@@ -6,6 +6,10 @@ import ResultsPage from "./components/ResultsPage";
 import DetailsPage from "./components/DetailsPage";
 import PageNotFound from "./components/NotFoundPage";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+require("./index.scss");
+
+
 class App extends Component {
   render() {
     return (

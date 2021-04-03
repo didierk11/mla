@@ -29,6 +29,7 @@ const DetailsPage = () => {
       <div>{id}</div>
       {results && (
         <div>
+          <div>{results.condition === 'new' ? "Nuevo" : "Usado"} - {results.sold_quantity} Vendidos</div>
           <div>{results.title}</div>
           <div>
             {results.price.amount}.{results.price.decimals}{" "}
@@ -37,6 +38,7 @@ const DetailsPage = () => {
           <div>
             <img src={results.picture} alt="imagen"></img>
           </div>
+          <button>Comprar</button>
         </div>
       )}
     </div>

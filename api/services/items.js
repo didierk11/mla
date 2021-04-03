@@ -80,7 +80,7 @@ const getItemDetails = async function (id) {
         condition: response2.data.condition,
         free_shipping: response2.data.shipping.free_shipping,
         sold_quantity: response2.data.sold_quantity,
-        description: response1.data.plain_text,
+        description: response1 ? response1.data.description : ''
       },
     };
     return result;

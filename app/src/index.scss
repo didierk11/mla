@@ -1,0 +1,116 @@
+$logo-1x: './assets/Logo_ML.png';
+$logo-2x: './assets/Logo_ML@2x.png.png';
+$free-shipping-logo-1x: './assets/ic_shipping.png';
+$free-shipping-logo-2x: './assets/ic_shipping@2x.png';
+
+$mla-yellow: #FFE600;
+$mla-black: #333333;
+$mla-gray: #999999;
+$mla-white: #EEEEEE;
+$mla-blue: #3483FA;
+
+.navi{
+  width: 100%;
+  background-color:$mla-yellow;
+}
+.navi-bar{
+  max-width: 1200px;
+  // position: relative;
+  // margin: 0 auto;
+}
+
+.navi-logo{
+  background-image: url($logo-1x);
+  background-repeat: no-repeat;
+  // background-size: 134px 34px;
+  height: 36px;
+  width: 53px;
+  // display: inline-block;
+  left: 10px;
+  position: absolute;
+  top: 11px;
+}
+
+.navi-search{
+  padding: 8px 1px;
+  position: relative;
+  // left: 300px;
+}
+.search-input{
+  position: relative;
+  left: 70px;
+  font-size: 18px;
+  font-weight: 400;
+  color: $mla-black;
+  background-color: #FFFFFF;
+  // box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  height: 39px;
+  display: block;
+  border-radius: 2px;
+  border: 0 rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 7px 60px 9px 15px;
+  box-sizing: border-box;
+  outline: none;
+  width: 90%;
+}
+.free-shipping-img{
+  background-image: url($free-shipping-logo-1x);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+.search-btn{
+  background-image: url("./assets/ic_Search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 39px;
+  padding-top: 2px;
+  cursor: pointer;
+  outline: 0;
+  width: 39px;
+  // background-color: $mla-white;
+  background-color: $mla-white;
+  top: 8px;
+  right: 2px;
+  position: absolute;
+  padding: 0;
+  // background: 0 0;
+  border: none;
+  color: #666;
+  box-sizing: border-box;
+}
+.item-list{
+  background-color: white;
+  border-bottom: 1px solid $mla-white;
+}
+.item-list-data{
+  padding-top: 16px;
+  position: relative;
+  padding:0;
+  font-size: 18px;
+}
+.item-list-price{
+  margin-top:16px;
+  margin-bottom: 32px;;
+  font-size:18px;
+}
+.item-list-img{
+  float: left;
+  width: 180px;
+  border-radius: 4px;
+  margin: 16px;
+}
+.item-cat{
+  font-size: 14px;
+  color:$mla-gray;
+  margin-top: 16px;
+  margin-bottom: 16px;;
+}
+body{
+  margin: 0px;
+  background-color: $mla-white;
+  font-family: Helvetica, sans-serif;
+}

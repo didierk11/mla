@@ -10,24 +10,36 @@ const ResultsPage = () => {
     return new URLSearchParams(useLocation().search);
   }
 
-  const searchResultsMapped  =
-    results.map((item) => {
-      return (
-        <div key={item.id}>
-          <a href={`/items/${item.id}`}>{item.title}</a>
-          <p>
-            <span>
-              {item.price.amount}.{item.price.decimals} {item.price.currency}
-            </span>
-          </p>
+  const searchResultsMapped = results.map((item) => {
+    return (
+      <div key={item.id} className="row">
+        <div className="col-1"></div>
+        <div className="col-10 item-list">
           <img
-            className="img"
+            className="item-list-img"
             alt="imagen del producto"
             src={item.picture}
           ></img>
+          <div className="item-list-data">
+            <div className="item-list-price">
+              {item.price.currency} ${item.price.amount}
+              {item.price.decimals > 0 && (
+                <sup>.{item.price.decimals}</sup>
+              )}{" "}
+              {item.free_shipping && (
+                <span>
+                  <div className="free-shipping-img"></div>
+                </span>
+              )}
+            </div>
+            <div>
+              <a href={`/items/${item.id}`}>{item.title}</a>
+            </div>
+          </div>
         </div>
-      );
-    });
+      </div>
+    );
+  });
 
   let query = useQuery();
 
@@ -50,9 +62,23 @@ const ResultsPage = () => {
   return (
     <div>
       <SearchBar />
-      <div>Lista de resultados de búsqueda</div>
-      <div>{query.get("search")}</div>
-      <div className="ui celled list">{searchResultsMapped}</div>
+      <div className="container-fluid">
+        <div className="row">
+        <div className="col-1"></div>
+
+          <div className="col-11">
+            <div className="item-cat">
+              {query.get("search")}
+              {" > "}
+              {query.get("search")}
+              {" > "}
+              {query.get("search")}
+            </div>
+          </div>
+        </div>
+        {/* <div>{query.get("search")}</div> */}
+        <div className="container-fluid">{searchResultsMapped}</div>
+      </div>
     </div>
   );
 };
