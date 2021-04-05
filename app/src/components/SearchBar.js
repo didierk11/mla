@@ -3,11 +3,10 @@ const React = require("react");
 class SearchBar extends React.Component {
   constructor() {
     super();
-
     this.state = { searchTerm: "" };
   }
 
-  handleSearchTermChange(event) {
+  handleSearchTerm(event) {
     this.setState({ searchTerm: event.target.value });
   }
 
@@ -18,12 +17,12 @@ class SearchBar extends React.Component {
           <div className="row">
             <div className="col-sm-1"></div>
             <div className="col-sm-10 ">
-            <div className="navi-logo"></div>
+              <div className="navi-logo"></div>
               <div className="navi-bar">
                 <div className="navi-search">
                   <form action="/items" method="get">
                     <input
-                      onChange={this.handleSearchTermChange.bind(this)}
+                      onChange={this.handleSearchTerm.bind(this)}
                       className="search-input"
                       placeholder="Nunca dejes de buscar"
                     />
@@ -37,8 +36,7 @@ class SearchBar extends React.Component {
                 </div>
               </div>
             </div>
-          <div className="col-sm-1"></div>
-
+            <div className="col-sm-1"></div>
           </div>
         </div>
       </div>

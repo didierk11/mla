@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
-const { formatPrice } = require("../utils/utils");
+import { formatPrice } from "../utils/utils";
+
 
 const DetailsPage = () => {
   const [results, setResults] = useState(null);
@@ -64,7 +65,7 @@ const DetailsPage = () => {
                     )}
                     {/* {results.price.currency} ${results.price.amount} */}
                     {results.price.decimals > 0 && (
-                      <sup>.{results.price.decimals}</sup>
+                      <sup className="item-details-price-decimal">.{results.price.decimals}</sup>
                     )}
                   </div>
                   <div>

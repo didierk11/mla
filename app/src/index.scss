@@ -95,6 +95,9 @@ $mla-blue: #3483FA;
 .item-list-price{
   font-size:24px;
 }
+.item-list-price-decinal{
+  font-size: 14px;
+}
 .item-list-free-shipping-img{
   background-image: url($free-shipping-logo-1x);
   background-repeat: no-repeat;
@@ -143,6 +146,9 @@ $mla-blue: #3483FA;
 }
 .item-detail-price{
   font-size: 46px;
+}
+.item-details-price-decimal{
+  font-size:27px;
 }
 .item-detail-buy-btn{
   margin-top: 32px;
@@ -221,6 +227,6 @@ body{
   margin: 0px;
   background-color: $mla-white;
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1;
+  line-height: 1.5;
   color:$mla-black;
 }

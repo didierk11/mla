@@ -1,26 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
-// import formatPrice from "../utils/utils";
-const { formatPrice } = require("../utils/utils");
 
+import { formatPrice, useQuery } from "../utils/utils";
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
-
-  // function PriceFormat(amount, currency, style) {
-  //   let obj = new Intl.NumberFormat("de-DE", {
-  //     style: style,
-  //     currency: currency,
-  //   });
-  //   return obj.format(amount);
-  // }
-
-  function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
-
   const resultsMapped = results.map((item) => {
     return (
       <div key={item.id} className="row">
@@ -36,9 +21,8 @@ const ResultsPage = () => {
               <div className="item-list-price">
                 ${" "}
                 {formatPrice(item.price.amount, item.price.currency, "decimal")}
-                {/* {item.price.currency} ${item.price.amount} */}
                 {item.price.decimals > 0 && (
-                  <sup>.{item.price.decimals}</sup>
+                  <sup className="item-list-price-decinal">.{item.price.decimals}</sup>
                 )}{" "}
                 {item.free_shipping && (
                   <span>
@@ -57,13 +41,13 @@ const ResultsPage = () => {
     );
   });
 
-  let query = useQuery();
+  let q = useQuery();
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/api/items", {
         params: {
-          q: query.get("search"),
+          q: q,
         },
       })
       .then((response) => {
@@ -83,15 +67,14 @@ const ResultsPage = () => {
           <div className="col-1"></div>
           <div className="col-11">
             <div className="item-cat">
-              {query.get("search")}
+              {q}
               {" > "}
-              {query.get("search")}
+              {q}
               {" > "}
-              {query.get("search")}
+              {q}
             </div>
           </div>
         </div>
-        {/* <div>{query.get("search")}</div> */}
         <div className="container-fluid">
           <div className="item-list-container">{resultsMapped}</div>
         </div>
