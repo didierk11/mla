@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
       <div className="navi">
         <div className="container-fluid">
           <div className="row justify-content-sm-center">
-            <div className="col-sm-11 ">
+            <div className="col-sm-10 ">
               <div className="navi-logo"></div>
               <form action="/items" method="get">
                 <div className="navi-bar">

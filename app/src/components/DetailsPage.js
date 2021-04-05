@@ -42,14 +42,14 @@ const DetailsPage = () => {
           </div>
           <div className="item-detail">
             <div className="row">
-              <div className="col-8">
+              <div className="col-lg-8">
                 <div className="item-detail-img-container">
                   <div className="item-detail-img">
                     <img src={results.picture} alt="imagen del producto"></img>
                   </div>
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-lg-3">
                 <div className="item-details-info">
                   <div className="item-details-new-sold-quantity">
                     {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
@@ -68,14 +68,14 @@ const DetailsPage = () => {
                       <sup className="item-details-price-decimal">.{results.price.decimals}</sup>
                     )}
                   </div>
-                  <div>
+                  <div className="item-detail-buy">
                     <button className="item-detail-buy-btn">Comprar</button>
                   </div>
                 </div>
               </div>
             </div>
             <div className="row">
-              <div className="col-8 item-detail-description">
+              <div className="col-lg-8 item-detail-description">
                 <p className="item-detail-description-title">
                   Descripción del Producto
                 </p>
