@@ -14,16 +14,15 @@ class SearchBar extends React.Component {
     return (
       <div className="navi">
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm-1"></div>
-            <div className="col-sm-10 ">
+          <div className="row justify-content-sm-center">
+            <div className="col-sm-11 ">
               <div className="navi-logo"></div>
-              <div className="navi-bar">
-                <div className="navi-search">
-                  <form action="/items" method="get">
+              <form action="/items" method="get">
+                <div className="navi-bar">
+                  <div class="navi-search">
                     <input
+                      type="text"
                       onChange={this.handleSearchTerm.bind(this)}
-                      className="search-input"
                       placeholder="Nunca dejes de buscar"
                     />
                     <input
@@ -31,12 +30,13 @@ class SearchBar extends React.Component {
                       value={this.state.searchTerm}
                       name="search"
                     />
-                    <button className="search-btn" type="submit"></button>
-                  </form>
+                  </div>
+                  <div class="search-submit">
+                    <button type="submit"></button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
-            <div className="col-sm-1"></div>
           </div>
         </div>
       </div>
