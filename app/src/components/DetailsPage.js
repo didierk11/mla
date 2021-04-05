@@ -50,32 +50,34 @@ const DetailsPage = () => {
           <div className="item-detail">
             <div className="row">
               <div className="col-8">
-                <img
-                  src={results.picture}
-                  className="item-detail-img"
-                  alt="imagen del producto"
-                ></img>
+                <div className="item-detail-img-container">
+                  <div className="item-detail-img">
+                    <img src={results.picture} alt="imagen del producto"></img>
+                  </div>
+                </div>
               </div>
               <div className="col-3">
-                <div className="item-details-new-sold-quantity">
-                  {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
-                  {results.sold_quantity} Vendidos
-                </div>
-                <div className="item-detail-title">{results.title}</div>
-                <div className="item-detail-price">
-                  ${" "}
-                  {PriceFormat(
-                    results.price.amount,
-                    results.price.currency,
-                    "decimal"
-                  )}
-                  {/* {results.price.currency} ${results.price.amount} */}
-                  {results.price.decimals > 0 && (
-                    <sup>.{results.price.decimals}</sup>
-                  )}
-                </div>
-                <div>
-                  <button className="item-detail-buy-btn">Comprar</button>
+                <div className="item-details-info">
+                  <div className="item-details-new-sold-quantity">
+                    {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
+                    {results.sold_quantity} Vendidos
+                  </div>
+                  <div className="item-detail-title">{results.title}</div>
+                  <div className="item-detail-price">
+                    ${" "}
+                    {PriceFormat(
+                      results.price.amount,
+                      results.price.currency,
+                      "decimal"
+                    )}
+                    {/* {results.price.currency} ${results.price.amount} */}
+                    {results.price.decimals > 0 && (
+                      <sup>.{results.price.decimals}</sup>
+                    )}
+                  </div>
+                  <div>
+                    <button className="item-detail-buy-btn">Comprar</button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -32,6 +32,7 @@ const getItemList = async function (q) {
         picture: element.thumbnail,
         condition: element.condition,
         free_shipping: element.shipping.free_shipping,
+        state: element.address.state_name,
       };
       items.push(item);
     });
@@ -44,6 +45,8 @@ const getItemList = async function (q) {
       items,
       categories,
     };
+    console.log(result);
+
     return result;
   } catch (e) {
     console.log(e);
@@ -77,7 +80,7 @@ const getItemDetails = async function (id) {
           amount: formatPrice(response2.data.price, 0),
           decimals: formatPrice(response2.data.price, 1),
         },
-        picture: response2.data.thumbnail,
+        picture: response2.data.pictures[0].secure_url,
         condition: response2.data.condition,
         free_shipping: response2.data.shipping.free_shipping,
         sold_quantity: response2.data.sold_quantity,
