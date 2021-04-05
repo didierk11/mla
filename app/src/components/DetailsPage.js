@@ -2,19 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import utils from "../utils/utils";
+const { formatPrice } = require("../utils/utils");
 
 const DetailsPage = () => {
   const [results, setResults] = useState(null);
   let { id } = useParams();
-
-  function PriceFormat(amount, currency, style) {
-    let obj = new Intl.NumberFormat("de-DE", {
-      style: style,
-      currency: currency,
-    });
-    return obj.format(amount);
-  }
 
   useEffect(() => {
     async function fetchData() {
@@ -65,7 +57,7 @@ const DetailsPage = () => {
                   <div className="item-detail-title">{results.title}</div>
                   <div className="item-detail-price">
                     ${" "}
-                    {PriceFormat(
+                    {formatPrice(
                       results.price.amount,
                       results.price.currency,
                       "decimal"

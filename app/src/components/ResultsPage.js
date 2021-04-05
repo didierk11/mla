@@ -2,17 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
+// import formatPrice from "../utils/utils";
+const { formatPrice } = require("../utils/utils");
+
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
 
-  function PriceFormat(amount, currency, style) {
-    let obj = new Intl.NumberFormat("de-DE", {
-      style: style,
-      currency: currency,
-    });
-    return obj.format(amount);
-  }
+  // function PriceFormat(amount, currency, style) {
+  //   let obj = new Intl.NumberFormat("de-DE", {
+  //     style: style,
+  //     currency: currency,
+  //   });
+  //   return obj.format(amount);
+  // }
 
   function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -32,7 +35,7 @@ const ResultsPage = () => {
             <div className="item-list-data">
               <div className="item-list-price">
                 ${" "}
-                {PriceFormat(item.price.amount, item.price.currency, "decimal")}
+                {formatPrice(item.price.amount, item.price.currency, "decimal")}
                 {/* {item.price.currency} ${item.price.amount} */}
                 {item.price.decimals > 0 && (
                   <sup>.{item.price.decimals}</sup>
