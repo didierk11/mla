@@ -9,7 +9,7 @@ Dado este enfoque de desarrollo, encontramos dos directorios bien diferenciados 
 
 El directorio app tiene la aplicación cliente desarrollada en ReactJs a partir de create-react-app y con el uso de bootstrap para organizar el layout y react-router para el enrutamiento de las distintas entradas: buscador, resultados de busqueda y detalles del item seleccionado.
 
-El directorio api es una especie de middleware encargado de obtener los datos desde la API de Mercado Libre, darle procesamiento a dichos datos y luego entregarlos como van a ser consumidos por la aplicación cliente. Está desarrollada en NodeJs y ExpressJs.
+El directorio api es un middleware encargado de obtener los datos desde la API de Mercado Libre, darle procesamiento a dichos datos y luego entregarlos como van a ser consumidos por la aplicación cliente. Está desarrollada en NodeJs y ExpressJs.
 
 ### Aclaración
 
@@ -22,6 +22,8 @@ A partir del uso de un buscador en la pantalla inicial, se puede obtener una lis
 ## Instrucciones
 
 1. Necesitamos tener instalado Node y npm en nuestro sistema. Luego descargamos el respositorio.
-2. Para iniciar el servidor, nos paramos en el directorio mla\api y por consola ejecutamos el comando $ npm start. http://localhost:3001
-3. Iniciar el cliente, nos paramos en el directorio mla\app y por consola ejectamos el comando $ npm start. http://localhost:3000
+2. Para iniciar el servidor, nos paramos en el directorio mla\api y por consola ejecutamos el comando:
+```bash $ npm start ``` http://localhost:3001
+3. Iniciar el cliente, nos paramos en el directorio mla\app y por consola ejecutamos el comando:
+```bash $ npm start ```  http://localhost:3000
 
