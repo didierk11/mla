@@ -3,6 +3,8 @@ $logo-2x: "../assets/Logo_ML@2x.png.png";
 $free-shipping-logo-1x: "../assets/ic_shipping.png";
 $free-shipping-logo-2x: "../assets/ic_shipping@2x.png";
 
+$mla-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial,
+sans-serif;
 $mla-yellow: #ffe600;
 $mla-black: #333333;
 $mla-gray: #999999;
@@ -12,7 +14,7 @@ $mla-blue: #3483fa;
 body {
     margin: 0px;
     background-color: $mla-white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $mla-font-family;
     line-height: 1.5;
     color: $mla-black;
   }
