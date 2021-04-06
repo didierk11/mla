@@ -16,11 +16,14 @@ function formatPrice(price, part) {
 
 const getItemList = async function (q) {
   try {
-    const response = await axios.get(config.api.baseURL + config.api.searchPath, { params: { q: q, limit: 4 } });
+
     const items = [];
     const categories = [];
+
+    const response = await axios.get(config.api.baseURL + config.api.searchPath, { params: { q: q, limit: 4 } });
+    const response2 = await axios.get(config.api.baseURL + config.api.categoriesPath + response.data.results[0].category_id);
+
     response.data.results.forEach((element) => {
-      categories.push(element.category_id);
       const item = {
         id: element.id,
         title: element.title,
@@ -35,6 +38,10 @@ const getItemList = async function (q) {
         state: element.address.state_name,
       };
       items.push(item);
+    });
+
+    response2.data.path_from_root.forEach((element) => {
+      categories.push(element.name);
     });
 
     const result = {
@@ -56,16 +63,16 @@ const getItemList = async function (q) {
 const getItemDetails = async function (id) {
   try {
     // item data
-    const response2 = await axios.get(
-      config.api.baseURL + config.api.item + id
-    );
+    const response2 = await axios.get(config.api.baseURL + config.api.item + id );
     // item description
-    const response1 = await axios.get(
-      config.api.baseURL +
-      config.api.item +
-        id +
-        config.api.description
-    );
+    const response1 = await axios.get(config.api.baseURL + config.api.item + id + config.api.description );
+    // item categories
+    const response3 = await axios.get(config.api.baseURL + config.api.categoriesPath + response2.data.category_id );
+
+    let categories = [];
+    response3.data.path_from_root.forEach((element) => {
+      categories.push(element.name);
+    });
 
     let result = {
       author: {
@@ -85,8 +92,10 @@ const getItemDetails = async function (id) {
         free_shipping: response2.data.shipping.free_shipping,
         sold_quantity: response2.data.sold_quantity,
         description: response1.data.plain_text,
+        categories,
       },
     };
+    console.log(result);
     return result;
   } catch (e) {
     console.error(e);

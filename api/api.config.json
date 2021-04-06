@@ -3,7 +3,8 @@
         "baseURL" : "https://api.mercadolibre.com/",
         "searchPath" : "sites/MLA/search",
         "item" : "items/",
-        "description" : "/description"
+        "description" : "/description",
+        "categoriesPath" : "/categories/"
     },
     "author":{
         "name" : "Didier",
