@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -5,10 +6,6 @@ import HomePage from "./components/HomePage";
 import ResultsPage from "./components/ResultsPage";
 import DetailsPage from "./components/DetailsPage";
 import PageNotFound from "./components/NotFoundPage";
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-require("./index.scss");
-
 
 class App extends Component {
   render() {

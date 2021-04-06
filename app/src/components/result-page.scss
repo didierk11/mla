@@ -1,0 +1,58 @@
+@import "common.scss";
+
+.item-list-row {
+    border-bottom: 1px solid $mla-white;
+  }
+  .item-list-container {
+    margin-bottom: 32px;
+    margin-left: 0;
+    background-color: white;
+  }
+  .item-list {
+    height: 212px;
+    margin: 0;
+    margin-left: 5px;
+    padding: 16px;
+  }
+  .item-list-data {
+    position: relative;
+    padding: 0;
+    font-size: 18px;
+  }
+  .item-list-price {
+    font-size: 24px;
+    margin: 0 0 32px 0;
+  }
+  .item-list-price-decinal {
+    font-size: 14px;
+  }
+  .item-list-free-shipping-img {
+    background-image: url($free-shipping-logo-1x);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+  }
+  .item-list-img-container {
+    width: 180px;
+    height: 180px;
+    margin: 16px;
+    overflow: hidden;
+  }
+  
+  .item-list-img {
+    background-color: #fff;
+  }
+  .item-list-img {
+    img {
+      width: auto;
+      height: 180px;
+      border-radius: 4px;
+    }
+  }
+  
+  .item-list-state {
+    margin-top: 16px;
+    font-size: 12px;
+  }

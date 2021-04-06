@@ -1,0 +1,70 @@
+@import "common.scss";
+
+.navi {
+  width: 100%;
+  background-color: $mla-yellow;
+}
+
+.navi-logo {
+  background-image: url($logo-1x);
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 53px;
+  float: left;
+  margin-top: 9px;
+  margin-right: 20px;
+}
+
+.navi-bar {
+  display: flex;
+}
+.navi-bar {
+  .navi-search {
+    flex: 1;
+  }
+}
+.navi-bar {
+  .search-submit {
+    flex: 0;
+    margin: 0;
+  }
+}
+.navi-bar {
+  div {
+    input {
+      width: 100%;
+      font-size: 18px;
+      font-weight: 400;
+      color: $mla-black;
+      background-color: #ffffff;
+      height: 39px;
+      border-radius: 2px;
+      border: 0 rgba(0, 0, 0, 0.2);
+      padding: 7px 60px 9px 15px;
+      outline: none;
+      margin-top: 5px;
+      margin-left: 0;
+    }
+  }
+}
+.navi-bar {
+  div {
+    button {
+      white-space: nowrap;
+      background-image: url("../assets/ic_Search.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 39px;
+      margin-top: 5px;
+      margin-left: 0;
+      cursor: pointer;
+      outline: 0;
+      width: 39px;
+      background-color: $mla-white;
+      padding: 0;
+      border: none;
+      color: #666;
+      box-sizing: border-box;
+    }
+  }
+}

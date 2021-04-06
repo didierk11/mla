@@ -1,0 +1,65 @@
+@import "common.scss";
+
+.item-details-info {
+  margin: 32px;
+}
+.item-detail-sold-quantity {
+  font-size: 12px;
+}
+.item-detail-title {
+  font-size: 24px;
+  line-height: 1;
+  margin: 0px;
+}
+.item-detail-price {
+  font-size: 46px;
+}
+.item-details-price-decimal {
+  font-size: 27px;
+}
+.item-detail-buy {
+  margin-top: 32px;
+  margin-right: 32px;
+  text-align: center;
+  width: 100%;
+}
+.item-detail-buy-btn {
+  color: #fff;
+  background-color: $mla-blue;
+  border-radius: 2px;
+  border: 0;
+  font-size: 14px;
+  padding: 12px 24px;
+  width: 200px;
+}
+.item-detail-description {
+  margin: 32px;
+  padding:0;
+}
+.item-detail-description-title {
+  font-size: 28px;
+}
+.item-detail-description-text {
+  margin-bottom: 32px;
+  font-size: 16px;
+  color: $mla-gray;
+  line-height: 1.3;
+}
+.item-detail-img {
+  width: 680px;
+  background-color: #fff;
+  margin-left: 32px;
+  margin-top:32px;
+}
+.item-detail-img img {
+  max-width: 100%;
+}
+.item-cat {
+  font-size: 14px;
+  color: $mla-gray;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.item-detail {
+  background-color: white;
+}

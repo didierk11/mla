@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { formatPrice } from "../utils/utils";
+require('./detail-page.scss');
+
 
 
 const DetailsPage = () => {
@@ -42,14 +44,14 @@ const DetailsPage = () => {
           </div>
           <div className="item-detail">
             <div className="row">
-              <div className="col-lg-8">
-                <div className="item-detail-img-container">
+              <div className="col-lg-7">
+                <div>
                   <div className="item-detail-img">
                     <img src={results.picture} alt="imagen del producto"></img>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-4">
                 <div className="item-details-info">
                   <div className="item-details-new-sold-quantity">
                     {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
@@ -75,7 +77,7 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-8 item-detail-description">
+              <div className="col-lg-7 item-detail-description">
                 <p className="item-detail-description-title">
                   Descripción del Producto
                 </p>

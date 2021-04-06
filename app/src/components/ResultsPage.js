@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from "./SearchBar";
-
 import { formatPrice, useQuery } from "../utils/utils";
+require('./result-page.scss');
+
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
