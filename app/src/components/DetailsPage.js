@@ -3,36 +3,33 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { formatPrice } from "../utils/utils";
-require('./detail-page.scss');
-
-
+require("./detail-page.scss");
 
 const DetailsPage = () => {
   const [results, setResults] = useState(null);
   let { id } = useParams();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get(
-          "http://localhost:3001/api/items/" + id
-        );
-        setResults(response.data.item);
-        console.log(results);
-      } catch (e) {
-        console.error(e);
+  function UpdateDetail(id){
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const response = await axios.get(
+            "http://localhost:3001/api/items/" + id
+          );
+          setResults(response.data.item);
+        } catch (e) {
+          console.error(e);
+        }
       }
-    }
-    fetchData();
-  }, []);
+      fetchData();
+    }, [id]);
+  }
 
-  // let price = PriceFormat(results.price.amount, results.price.currency, "decimal");
-  // console.log(PriceFormat(results.price.amount, results.price.currency, "decimal"));
+  UpdateDetail(id);
+
   return (
     <div>
       <SearchBar />
-      {/* <div>Detalle del producto seleccionado</div>
-      <div>{id}</div> */}
       {results && (
         <div className="container">
           <div className="item-cat">
@@ -65,9 +62,10 @@ const DetailsPage = () => {
                       results.price.currency,
                       "decimal"
                     )}
-                    {/* {results.price.currency} ${results.price.amount} */}
                     {results.price.decimals > 0 && (
-                      <sup className="item-details-price-decimal">.{results.price.decimals}</sup>
+                      <sup className="item-details-price-decimal">
+                        .{results.price.decimals}
+                      </sup>
                     )}
                   </div>
                   <div className="item-detail-buy">

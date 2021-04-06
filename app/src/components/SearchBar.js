@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
               <div className="navi-logo"></div>
               <form action="/items" method="get">
                 <div className="navi-bar">
-                  <div class="navi-search">
+                  <div className="navi-search">
                     <input
                       type="text"
                       onChange={this.handleSearchTerm.bind(this)}
@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
                       name="search"
                     />
                   </div>
-                  <div class="search-submit">
+                  <div className="search-submit">
                     <button type="submit"></button>
                   </div>
                 </div>

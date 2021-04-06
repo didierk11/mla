@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from "./SearchBar";
 import { formatPrice, useQuery } from "../utils/utils";
-require('./result-page.scss');
-
+require("./result-page.scss");
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
   const resultsMapped = results.map((item) => {
     return (
-      <div key={item.id} className="row justify-content-md-center item-list-row">
+      <div
+        key={item.id}
+        className="row justify-content-md-center item-list-row"
+      >
         <div className="col-md-2">
           <div className="item-list-img-container">
             <div className="item-list-img">
@@ -57,22 +59,25 @@ const ResultsPage = () => {
 
   let q = useQuery();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/items", {
-        params: {
-          q: q,
-        },
-      })
-      .then((response) => {
-        setResults(response.data.items);
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [setResults]);
+  function UpdateResults(q) {
+    useEffect(() => {
+      axios
+        .get("http://localhost:3001/api/items", {
+          params: {
+            q: q,
+          },
+        })
+        .then((response) => {
+          setResults(response.data.items);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, [q]);
+  }
 
+  UpdateResults(q);
+  
   return (
     <div>
       <SearchBar />
