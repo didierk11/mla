@@ -9,20 +9,24 @@ const DetailsPage = () => {
   const [results, setResults] = useState(null);
   let { id } = useParams();
 
-  function UpdateDetail(id){
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const response = await axios.get(
-            "http://localhost:3001/api/items/" + id
-          );
-          setResults(response.data.item);
-        } catch (e) {
-          console.error(e);
+  function UpdateDetail(id) {
+    useEffect(
+      () => {
+        async function fetchData() {
+          try {
+            const response = await axios.get(
+              "http://localhost:3001/api/items/" + id
+            );
+            setResults(response.data.item);
+          } catch (e) {
+            console.error(e);
+          }
         }
-      }
-      fetchData();
-    }, [id]);
+        fetchData();
+      },
+      [id],
+      [results]
+    );
   }
 
   UpdateDetail(id);
@@ -33,11 +37,14 @@ const DetailsPage = () => {
       {results && (
         <div className="container">
           <div className="item-cat">
-            {id}
-            {" > "}
-            {id}
-            {" > "}
-            {id}
+            <ol>
+              {results.categories.map((item) => (
+                <li key={item}>
+                  {item}
+                  <span className="chevron">{" > "}</span>
+                </li>
+              ))}
+            </ol>
           </div>
           <div className="item-detail">
             <div className="row">

@@ -3,8 +3,7 @@ $logo-2x: "../assets/Logo_ML@2x.png.png";
 $free-shipping-logo-1x: "../assets/ic_shipping.png";
 $free-shipping-logo-2x: "../assets/ic_shipping@2x.png";
 
-$mla-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial,
-sans-serif;
+$mla-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $mla-yellow: #ffe600;
 $mla-black: #333333;
 $mla-gray: #999999;
@@ -12,9 +11,39 @@ $mla-white: #eeeeee;
 $mla-blue: #3483fa;
 
 body {
-    margin: 0px;
-    background-color: $mla-white;
-    font-family: $mla-font-family;
-    line-height: 1.5;
-    color: $mla-black;
+  margin: 0px;
+  background-color: $mla-white;
+  font-family: $mla-font-family;
+  line-height: 1.5;
+  color: $mla-black;
+}
+
+.item-cat {
+  font-size: 14px;
+  font-weight: 400;
+  color: $mla-gray;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  ol {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline;
+
+      .chevron {
+        display: none;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-weight: 400;
+      }
+    }
+    
+    li:not(:last-child) {
+      .chevron {
+        display: inline-block;
+      }
+    }
   }
+}
