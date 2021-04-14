@@ -1,9 +1,7 @@
 const axios = require("axios");
 const config = require("../api.config.json");
 
-console.log(config);
-
-function formatPrice(price, part) {
+const formatPrice = (price, part) => {
   const priceParts = price.toString().split(".");
   let result = 0;
   if (part === 0) {
@@ -12,16 +10,23 @@ function formatPrice(price, part) {
     result = isNaN(parseInt(priceParts[1])) ? 0 : parseInt(priceParts[1]);
   }
   return result;
-}
+};
 
-const getItemList = async function (q) {
+const getItemList = async (q) => {
   try {
 
     const items = [];
     const categories = [];
 
-    const response = await axios.get(config.api.baseURL + config.api.searchPath, { params: { q: q, limit: 4 } });
-    const response2 = await axios.get(config.api.baseURL + config.api.categoriesPath + response.data.results[0].category_id);
+    const response = await axios.get(
+      config.api.baseURL + config.api.searchPath,
+      { params: { q: q, limit: 4 } }
+    );
+    const response2 = await axios.get(
+      config.api.baseURL +
+        config.api.categoriesPath +
+        response.data.results[0].category_id
+    );
 
     response.data.results.forEach((element) => {
       const item = {
@@ -52,21 +57,29 @@ const getItemList = async function (q) {
       items,
       categories,
     };
-    
+
     return result;
   } catch (e) {
     console.log(e);
   }
 };
 
-const getItemDetails = async function (id) {
+const getItemDetails = async (id) => {
   try {
     // item data
-    const response2 = await axios.get(config.api.baseURL + config.api.item + id );
+    const response2 = await axios.get(
+      config.api.baseURL + config.api.item + id
+    );
     // item description
-    const response1 = await axios.get(config.api.baseURL + config.api.item + id + config.api.description );
+    const response1 = await axios.get(
+      config.api.baseURL + config.api.item + id + config.api.description
+    );
     // item categories
-    const response3 = await axios.get(config.api.baseURL + config.api.categoriesPath + response2.data.category_id );
+    const response3 = await axios.get(
+      config.api.baseURL +
+        config.api.categoriesPath +
+        response2.data.category_id
+    );
 
     let categories = [];
     response3.data.path_from_root.forEach((element) => {
