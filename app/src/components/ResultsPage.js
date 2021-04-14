@@ -9,7 +9,7 @@ const ResultsPage = () => {
 
   let q = useQuery();
 
-  function UpdateResults(q) {
+  const UpdateResults = (q) => {
     useEffect(() => {
       axios
         .get("http://localhost:3001/api/items", {
@@ -19,13 +19,12 @@ const ResultsPage = () => {
         })
         .then((response) => {
           setResults(response.data);
-
         })
         .catch((error) => {
           console.log(error);
         });
     }, [q]);
-  }
+  };
 
   UpdateResults(q);
 
@@ -38,10 +37,12 @@ const ResultsPage = () => {
             <div className="col-12">
               <div className="item-cat">
                 <ol>
-                  {results.categories.map((item) => 
-                    <li key={item}>{item}
+                  {results.categories.map((item) => (
+                    <li key={item}>
+                      {item}
                       <span className="chevron">{" > "}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>
