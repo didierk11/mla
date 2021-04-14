@@ -21,9 +21,12 @@ A partir del uso de un buscador en la pantalla inicial, se puede obtener una lis
 
 ## Instrucciones
 
-1. Necesitamos tener instalado Node y npm en nuestro sistema. Luego descargamos el respositorio.
-2. Para iniciar el servidor, nos paramos en el directorio mla\api y por consola ejecutamos el comando:
+1. Necesitamos tener instalado Node y npm en nuestro sistema. 
+2. Clonamos el repositorio. Dado que tenemos un repositorio con dos directorios y cada uno tiene sus propias dependencias, debemos ejecutar ```bash $ npm install ``` en cada uno de ellos.
+    2.1 Nos paramos en el directorio mla\api, ejecutamos por consola ```bash $ npm install ```. 
+    2.2 Luego nos paramos en el directorio mla\app y ejecutamos por consola ```bash $ npm install ```
+3. Para iniciar el servidor, nos paramos en el directorio mla\api y por consola ejecutamos el comando:
 ```bash $ npm start ``` http://localhost:3001
-3. Iniciar el cliente, nos paramos en el directorio mla\app y por consola ejecutamos el comando:
+4. Iniciar el cliente, nos paramos en el directorio mla\app y por consola ejecutamos el comando:
 ```bash $ npm start ```  http://localhost:3000
 
