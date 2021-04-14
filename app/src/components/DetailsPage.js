@@ -9,7 +9,7 @@ const DetailsPage = () => {
   const [results, setResults] = useState(null);
   let { id } = useParams();
 
-  function UpdateDetail(id) {
+  const UpdateDetail = (id) => {
     useEffect(
       () => {
         async function fetchData() {
@@ -27,7 +27,7 @@ const DetailsPage = () => {
       [id],
       [results]
     );
-  }
+  };
 
   UpdateDetail(id);
 

@@ -52,8 +52,7 @@ const getItemList = async function (q) {
       items,
       categories,
     };
-    console.log(result);
-
+    
     return result;
   } catch (e) {
     console.log(e);
