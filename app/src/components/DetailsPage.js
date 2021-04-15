@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import { formatPrice } from "../utils/utils";
+import ItemCategories from "./ItemCategories";
+import ItemDetailDescription from "./ItemDetailDescription";
+import ItemDetailInfo from "./ItemDetailInfo";
+import ItemDetailImage from "./ItemDetailImage";
+
 require("./detail-page.scss");
 
 const DetailsPage = () => {
@@ -36,62 +40,25 @@ const DetailsPage = () => {
       <SearchBar />
       {results && (
         <div className="container">
-          <div className="item-cat">
-            <ol>
-              {results.categories.map((item) => (
-                <li key={item}>
-                  {item}
-                  <span className="chevron">{" > "}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <ItemCategories categories={results.categories} />
           <div className="item-detail">
             <div className="row">
               <div className="col-lg-7">
-                <div>
-                  <div className="item-detail-img">
-                    <img src={results.picture} alt="imagen del producto"></img>
-                  </div>
-                </div>
+                <ItemDetailImage src={results.picture} alt={results.title} />
               </div>
               <div className="col-lg-4">
-                <div className="item-details-info">
-                  <div className="item-details-new-sold-quantity">
-                    {results.condition === "new" ? "Nuevo" : "Usado"} -{" "}
-                    {results.sold_quantity} Vendidos
-                  </div>
-                  <div className="item-detail-title">{results.title}</div>
-                  <div className="item-detail-price">
-                    ${" "}
-                    {formatPrice(
-                      results.price.amount,
-                      results.price.currency,
-                      "decimal"
-                    )}
-                    {results.price.decimals > 0 && (
-                      <sup className="item-details-price-decimal">
-                        .{results.price.decimals}
-                      </sup>
-                    )}
-                  </div>
-                  <div className="item-detail-buy">
-                    <button className="item-detail-buy-btn">Comprar</button>
-                  </div>
-                </div>
+                <ItemDetailInfo
+                  condition={results.condition}
+                  sold_quantity={results.sold_quantity}
+                  title={results.title}
+                  amount={results.price.amount}
+                  currency={results.price.currency}
+                  decimals={results.price.decimals}
+                />
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-7 item-detail-description">
-                <p className="item-detail-description-title">
-                  Descripción del Producto
-                </p>
-                <p className="item-detail-description-text">
-                  {results.description
-                    ? results.description
-                    : "El vendedor no proporcionó una descripción."}
-                </p>
-              </div>
+              <ItemDetailDescription description={results.description} />
             </div>
           </div>
         </div>
