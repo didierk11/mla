@@ -1,14 +1,5 @@
 import React from "react";
 
-// const ItemCategories = (props) => {
-//   return (
-//     <li>
-//       {props.name}
-//       <span className="chevron">{" > "}</span>
-//     </li>
-//   );
-// };
-
 const ItemCategories = (props) => {
   const categories = props.categories;
   return (

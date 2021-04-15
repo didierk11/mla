@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: ItemCategories render correctly 1`] = `
+<div
+  className="item-cat"
+>
+  <ol>
+    <li>
+      testCategory1
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      testCategory2
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      testCategory3
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+  </ol>
+</div>
+`;

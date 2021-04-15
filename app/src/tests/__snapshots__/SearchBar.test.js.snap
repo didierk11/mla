@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: SearchBar render correctly 1`] = `
+<div
+  className="navi"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row justify-content-sm-center"
+    >
+      <div
+        className="col-sm-10 "
+      >
+        <div
+          className="navi-logo"
+        />
+        <form
+          action="/items"
+          method="get"
+        >
+          <div
+            className="navi-bar"
+          >
+            <div
+              className="navi-search"
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Nunca dejes de buscar"
+                type="text"
+              />
+              <input
+                name="search"
+                type="hidden"
+                value=""
+              />
+            </div>
+            <div
+              className="search-submit"
+            >
+              <button
+                type="submit"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

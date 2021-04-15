@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: ItemDetailDescription render correctly 1`] = `
+<div
+  className="col-lg-7 item-detail-description"
+>
+  <p
+    className="item-detail-description-title"
+  >
+    Descripción del Producto
+  </p>
+  <p
+    className="item-detail-description-text"
+  >
+    Item valid description text.
+  </p>
+</div>
+`;
