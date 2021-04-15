@@ -35,7 +35,7 @@ El directorio api es un middleware encargado de obtener los datos desde la API d
 ### Test de Componentes
 
 Se pueden realizar desde ```bash mla\app ``` y ejecutamos por consola ```bash $ npm run test ```
-Estos tests estan destinados a comprobar el correcto renderizado de los componentes de la aplicación.
+Estos tests estan destinados a comprobar el correcto renderizado de los componentes de la aplicación y están disponibles en el *branch* **dev**
 
 ## Versionado
 
