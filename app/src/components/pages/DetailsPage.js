@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import ItemCategories from "./ItemCategories";
-import ItemDetailDescription from "./ItemDetailDescription";
-import ItemDetailInfo from "./ItemDetailInfo";
-import ItemDetailImage from "./ItemDetailImage";
+import SearchBar from "../SearchBar";
+import ItemCategories from "../ItemCategories";
+import ItemDetailDescription from "../ItemDetailDescription";
+import ItemDetailInfo from "../ItemDetailInfo";
+import ItemDetailImage from "../ItemDetailImage";
 
 require("./detail-page.scss");
 

@@ -51,7 +51,7 @@
   div {
     button {
       white-space: nowrap;
-      background-image: url("../assets/ic_Search.png");
+      background-image: url($search-icon);
       background-repeat: no-repeat;
       background-position: center;
       height: 39px;

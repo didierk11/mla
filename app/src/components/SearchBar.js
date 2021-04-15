@@ -1,5 +1,5 @@
 const React = require("react");
-require('./search-bar.scss');
+require('./pages/search-bar.scss');
 
 class SearchBar extends React.Component {
   constructor() {
