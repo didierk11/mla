@@ -22,20 +22,20 @@ El directorio api es un middleware encargado de obtener los datos desde la API d
 ## Instalación
 
 1. Necesitamos tener instalado **Node** y **npm** en nuestro sistema. 
-2. Clonamos el repositorio. Dado que tenemos un repositorio con dos directorios y cada uno tiene sus propias dependencias, debemos ejecutar ```bash $ npm install ``` en cada uno de ellos.
-    1. Nos paramos en el directorio ```bash mla\api ```, ejecutamos por consola ```bash $ npm install ```. 
-    2. Luego nos paramos en el directorio ```bash mla\app ``` y ejecutamos por consola ```bash $ npm install ```
-3. Para iniciar el servidor, nos paramos en el directorio ```bash mla\api ``` y por consola ejecutamos el comando:
-```bash $ npm start ``` http://localhost:3001
-4. Iniciar el cliente, nos paramos en el directorio ```bash mla\app ``` y por consola ejecutamos el comando:
-```bash $ npm start ```  http://localhost:3000
+2. Clonamos el repositorio. Dado que tenemos un repositorio con dos directorios y cada uno tiene sus propias dependencias, debemos ejecutar ``` $ npm install ``` en cada uno de ellos.
+    1. Nos paramos en el directorio ``` mla\api ```, ejecutamos por consola ``` $ npm install ```. 
+    2. Luego nos paramos en el directorio ``` mla\app ``` y ejecutamos por consola ``` $ npm install ```
+3. Para iniciar el servidor, nos paramos en el directorio ``` mla\api ``` y por consola ejecutamos el comando:
+``` $ npm start ``` http://localhost:3001
+4. Iniciar el cliente, nos paramos en el directorio ``` mla\app ``` y por consola ejecutamos el comando:
+``` $ npm start ```  http://localhost:3000
 
 ## Testing
 
 ### Test de Componentes
 
-Se pueden realizar desde ```bash mla\app ``` y ejecutamos por consola ```bash $ npm run test ```
-Estos tests estan destinados a comprobar el correcto renderizado de los componentes de la aplicación y están disponibles en el *branch* **dev**
+Se pueden realizar tests sobre componentes desde ``` mla\app ``` y ejecutamos por consola ``` $ npm run test ```
+Estos tests estan destinados a comprobar el correcto renderizado de los componentes de la aplicación y están desarrollados con el framework **Jest**.
 
 ## Versionado
 

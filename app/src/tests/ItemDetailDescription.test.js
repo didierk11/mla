@@ -2,9 +2,10 @@ import React from "react";
 import { render } from "react-dom";
 import ItemDetailDescription from "../components/ItemDetailDescription";
 import renderer from "react-test-renderer";
+import data from "./dataSets/items.json";
 
 //testing data
-const desc = 'Item valid description text.';
+const desc = data.description;
 
 describe("Snapshot test:", () => {
   it("ItemDetailDescription render correctly", () => {

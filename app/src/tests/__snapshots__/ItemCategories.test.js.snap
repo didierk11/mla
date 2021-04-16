@@ -6,7 +6,7 @@ exports[`Snapshot test: ItemCategories render correctly 1`] = `
 >
   <ol>
     <li>
-      testCategory1
+      Deportes y Fitness
       <span
         className="chevron"
       >
@@ -14,7 +14,7 @@ exports[`Snapshot test: ItemCategories render correctly 1`] = `
       </span>
     </li>
     <li>
-      testCategory2
+      Fútbol
       <span
         className="chevron"
       >
@@ -22,7 +22,15 @@ exports[`Snapshot test: ItemCategories render correctly 1`] = `
       </span>
     </li>
     <li>
-      testCategory3
+      Equipamiento y Entrenamiento
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      Pelotas
       <span
         className="chevron"
       >

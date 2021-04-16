@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: ItemResults render correctly 1`] = `
+<div
+  className="row justify-content-md-center item-list-row"
+>
+  <div
+    className="col-lg-2"
+  >
+    <div
+      className="item-list-img-container"
+    >
+      <div
+        className="item-list-img"
+      >
+        <img
+          alt="Imagen del producto"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="col-lg-10"
+  >
+    <div
+      className="item-list"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-md-8"
+        >
+          <div
+            className="item-list-data"
+          >
+            <div
+              className="item-list-price"
+            >
+              $
+               
+              949
+              <sup
+                className="item-list-price-decinal"
+              >
+                .
+                9
+              </sup>
+               
+              <span>
+                <div
+                  className="item-list-free-shipping-img"
+                />
+              </span>
+            </div>
+            <div>
+              <a
+                href="/items/MLA869265149"
+              >
+                Pelota De Futbol Nº 5 + Calidad 350 Gramos Cámara De Látex
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-4"
+        >
+          <div
+            className="item-list-state"
+          >
+            Buenos Aires
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
