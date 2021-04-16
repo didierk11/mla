@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: ItemDetailInfo render correctly 1`] = `
+<div
+  className="item-details-info"
+>
+  <div
+    className="item-details-new-sold-quantity"
+  >
+    Nuevo
+     -
+     
+    2000
+     Vendidos
+  </div>
+  <div
+    className="item-detail-title"
+  >
+    Pelota De Futbol Nº 5 + Calidad 350 Gramos Cámara De Látex
+  </div>
+  <div
+    className="item-detail-price"
+  >
+    $ 
+    949
+    <sup
+      className="item-details-price-decimal"
+    >
+      .
+      9
+    </sup>
+  </div>
+  <div
+    className="item-detail-buy"
+  >
+    <button
+      className="item-detail-buy-btn"
+    >
+      Comprar
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test: ItemCategories render correctly 1`] = `
+<div
+  className="item-cat"
+>
+  <ol>
+    <li>
+      Deportes y Fitness
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      Fútbol
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      Equipamiento y Entrenamiento
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+    <li>
+      Pelotas
+      <span
+        className="chevron"
+      >
+         &gt; 
+      </span>
+    </li>
+  </ol>
+</div>
+`;
