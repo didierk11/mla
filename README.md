@@ -37,7 +37,11 @@ El directorio api es un middleware encargado de obtener los datos desde la API d
 Se pueden realizar tests sobre componentes desde ``` mla\app ``` y ejecutamos por consola ``` $ npm run test ```
 Estos tests estan destinados a comprobar el correcto renderizado de los componentes de la aplicación y están desarrollados con el framework **Jest**.
 
+Por otro lado, también podemos realizar tests sobre los endpoint de nuestra api desde ``` mla\api ``` y ejecutamos ``` $ npm run test ```
+Estos tests estan destinados a comprobar la respuesta y datos que entregan los endpoints implementados. Se utilizó **Jest** y **SuperTest**.
+
 ## Versionado
 
 * **15/04/2021** - *v1.0.1* Refactor de los componentes React en mla/app. Se comienza a trabajar con test de componentes.
+* **19/04/2021** - *v1.0.2* Se comienza a trabajar con test sobre endpoints de nuestra api.
 
