@@ -60,7 +60,7 @@ const getItemList = async (q) => {
 
     return result;
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 };
 
@@ -107,7 +107,7 @@ const getItemDetails = async (id) => {
         categories,
       },
     };
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (e) {
     console.error(e);
