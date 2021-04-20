@@ -2,8 +2,6 @@ import React from "react";
 
 const ItemDetailImage = (props) => {
   const { src, alt } = props;
-  // const src = props.src;
-  // const alt = props.alt;
 
   return (
     <div>

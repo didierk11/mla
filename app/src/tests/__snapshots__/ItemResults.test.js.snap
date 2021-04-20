@@ -37,8 +37,7 @@ exports[`Snapshot test: ItemResults render correctly 1`] = `
             <div
               className="item-list-price"
             >
-              $
-               
+              $ 
               949
               <sup
                 className="item-list-price-decinal"

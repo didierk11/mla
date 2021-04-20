@@ -6,7 +6,6 @@ exports[`Snapshot test: ItemDetailImage render correctly 1`] = `
     className="item-detail-img"
   >
     <img
-      alt="Pelota De Futbol Nº 5 + Calidad 350 Gramos Cámara De Látex"
       src="https://http2.mlstatic.com/D_647277-MLA42892938048_072020-O.jpg"
     />
   </div>

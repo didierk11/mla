@@ -2,16 +2,16 @@ import React from "react";
 import { formatPrice } from "../utils/utils";
 
 const ItemResults = (props) => {
-  const { id, picture : src, title, free_shipping, state, amount, currency, decimals } = props;
-
-  // const id = props.id;
-  // const src = props.picture;
-  // const title = props.title;
-  // const amount = props.amount;
-  // const currency = props.currency;
-  // const decimals = props.decimals;
-  // const free_shipping = props.free_shipping;
-  // const state = props.state;
+  const {
+    id,
+    picture: src,
+    title,
+    free_shipping,
+    state,
+    amount,
+    currency,
+    decimals,
+  } = props;
 
   return (
     <div className="row justify-content-md-center item-list-row">

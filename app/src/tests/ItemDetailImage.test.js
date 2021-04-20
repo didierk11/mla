@@ -4,10 +4,10 @@ import ItemDetailImage from "../components/ItemDetailImage";
 import renderer from "react-test-renderer";
 import data from "./dataSets/items.json";
 
-//testing data
-const src = data.src;
-const alt = data.title;
+// data
+const {src, alt} = data;
 
+// test
 describe("Snapshot test:", () => {
   it("ItemDetailImage render correctly", () => {
     const div = renderer

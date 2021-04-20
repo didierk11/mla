@@ -5,13 +5,6 @@ const ItemDetailInfo = (props) => {
   const { condition, sold_quantity, title } = props;
   const { amount, currency, decimals } = props;
 
-  // const condition = props.condition;
-  // const sold_quantity = props.sold_quantity;
-  // const title = props.title;
-  // const amount = props.amount;
-  // const currency = props.currency;
-  // const decimals = props.decimals;
-
   return (
     <div className="item-details-info">
       <div className="item-details-new-sold-quantity">
