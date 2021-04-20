@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemCategories = (props) => {
-  const categories = props.categories;
+  const { categories } = props;
   return (
     <div className="item-cat">
       <ol>

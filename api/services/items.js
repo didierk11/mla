@@ -14,38 +14,48 @@ const formatPrice = (price, part) => {
 
 const getItemList = async (q) => {
   try {
-
     const items = [];
     const categories = [];
 
-    const response = await axios.get(
+    const search_response = await axios.get(
       config.api.baseURL + config.api.searchPath,
       { params: { q: q, limit: 4 } }
     );
-    const response2 = await axios.get(
+    const cat_response = await axios.get(
       config.api.baseURL +
         config.api.categoriesPath +
-        response.data.results[0].category_id
+        search_response.data.results[0].category_id
     );
 
-    response.data.results.forEach((element) => {
+    search_response.data.results.forEach((element) => {
+      const {
+        id,
+        title,
+        currency_id,
+        price,
+        thumbnail,
+        condition,
+        shipping: { free_shipping },
+        address: { state_name },
+      } = element;
+
       const item = {
-        id: element.id,
-        title: element.title,
+        id: id,
+        title: title,
         price: {
-          currency: element.currency_id,
-          amount: formatPrice(element.price, 0),
-          decimals: formatPrice(element.price, 1),
+          currency: currency_id,
+          amount: formatPrice(price, 0),
+          decimals: formatPrice(price, 1),
         },
-        picture: element.thumbnail,
-        condition: element.condition,
-        free_shipping: element.shipping.free_shipping,
-        state: element.address.state_name,
+        picture: thumbnail,
+        condition: condition,
+        free_shipping: free_shipping,
+        state: state_name,
       };
       items.push(item);
     });
 
-    response2.data.path_from_root.forEach((element) => {
+    cat_response.data.path_from_root.forEach((element) => {
       categories.push(element.name);
     });
 
@@ -64,50 +74,70 @@ const getItemList = async (q) => {
   }
 };
 
-const getItemDetails = async (id) => {
+const getItemDetails = async (item_id) => {
   try {
     // item data
-    const response2 = await axios.get(
-      config.api.baseURL + config.api.item + id
+    const item_data_response = await axios.get(
+      config.api.baseURL + config.api.item + item_id
     );
     // item description
-    const response1 = await axios.get(
-      config.api.baseURL + config.api.item + id + config.api.description
+    const item_description_response = await axios.get(
+      config.api.baseURL + config.api.item + item_id + config.api.description
     );
     // item categories
-    const response3 = await axios.get(
+    const item_categories_response = await axios.get(
       config.api.baseURL +
         config.api.categoriesPath +
-        response2.data.category_id
+        item_data_response.data.category_id
     );
 
     let categories = [];
-    response3.data.path_from_root.forEach((element) => {
+    item_categories_response.data.path_from_root.forEach((element) => {
       categories.push(element.name);
     });
 
+    const {
+      author: { name, lastname },
+    } = config;
+
+    const {
+      data: {
+        id,
+        title,
+        currency_id,
+        price,
+        pictures,
+        condition,
+        shipping: { free_shipping },
+        sold_quantity,
+      },
+    } = item_data_response;
+
+    const {
+      data: { plain_text },
+    } = item_description_response;
+
     let result = {
       author: {
-        name: config.author.name,
-        lastname: config.author.lastname,
+        name: name,
+        lastname: lastname,
       },
       item: {
-        id: response2.data.id,
-        title: response2.data.title,
+        id: id,
+        title: title,
         price: {
-          currency: response2.data.currency_id,
-          amount: formatPrice(response2.data.price, 0),
-          decimals: formatPrice(response2.data.price, 1),
+          currency: currency_id,
+          amount: formatPrice(price, 0),
+          decimals: formatPrice(price, 1),
         },
-        picture: response2.data.pictures[0].secure_url,
-        condition: response2.data.condition,
-        free_shipping: response2.data.shipping.free_shipping,
-        sold_quantity: response2.data.sold_quantity,
-        description: response1.data.plain_text,
+        picture: pictures[0].secure_url,
+        condition: condition,
+        free_shipping: free_shipping,
+        sold_quantity: sold_quantity,
+        description: plain_text,
         categories,
       },
     };
-    // console.log(result);
     return result;
   } catch (e) {
     console.error(e);
