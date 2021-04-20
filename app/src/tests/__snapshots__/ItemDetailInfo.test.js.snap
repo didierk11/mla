@@ -8,8 +8,7 @@ exports[`Snapshot test: ItemDetailInfo render correctly 1`] = `
     className="item-details-new-sold-quantity"
   >
     Nuevo
-     -
-     
+     - 
     2000
      Vendidos
   </div>

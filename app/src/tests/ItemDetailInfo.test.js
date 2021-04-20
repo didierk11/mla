@@ -4,17 +4,11 @@ import ItemDetailInfo from "../components/ItemDetailInfo";
 import renderer from "react-test-renderer";
 import data from "./dataSets/items.json";
 
-//testing data
-// const condition = data.condition;
-// const sold_quantity = data.sold_quantity;
-// const title = data.title;
-// const amount = data.price.amount;
-// const currency = data.price.currency;
-// const decimals = data.price.decimals;
-
+// data
 const {condition, sold_quantity, title} = data;
 const {amount, currency, decimals} = data.price;
 
+// test
 describe("Snapshot test:", () => {
   it("ItemDetailInfo render correctly", () => {
     const div = renderer

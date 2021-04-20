@@ -1,10 +1,6 @@
 {
     "api": {
-        "baseURL" : "https://api.mercadolibre.com/",
-        "searchPath" : "sites/MLA/search",
-        "item" : "items/",
-        "description" : "/description",
-        "categoriesPath" : "/categories/"
+        "baseURL" : "https://api.mercadolibre.com"
     },
     "author":{
         "name" : "Didier",

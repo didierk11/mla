@@ -18,13 +18,12 @@ const getItemList = async (q) => {
     const categories = [];
 
     const search_response = await axios.get(
-      config.api.baseURL + config.api.searchPath,
+      `${config.api.baseURL}/sites/MLA/search`,
       { params: { q: q, limit: 4 } }
     );
+    const category_id = search_response.data.results[0].category_id;
     const cat_response = await axios.get(
-      config.api.baseURL +
-        config.api.categoriesPath +
-        search_response.data.results[0].category_id
+      `${config.api.baseURL}/categories/${category_id}`
     );
 
     search_response.data.results.forEach((element) => {
@@ -78,17 +77,16 @@ const getItemDetails = async (item_id) => {
   try {
     // item data
     const item_data_response = await axios.get(
-      config.api.baseURL + config.api.item + item_id
+      `${config.api.baseURL}/items/${item_id}`
     );
     // item description
     const item_description_response = await axios.get(
-      config.api.baseURL + config.api.item + item_id + config.api.description
+      `${config.api.baseURL}/items/${item_id}/description`
     );
     // item categories
+    const category_id = item_data_response.data.category_id;
     const item_categories_response = await axios.get(
-      config.api.baseURL +
-        config.api.categoriesPath +
-        item_data_response.data.category_id
+      `${config.api.baseURL}/categories/${category_id}`
     );
 
     let categories = [];

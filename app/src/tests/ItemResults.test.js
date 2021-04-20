@@ -4,19 +4,11 @@ import ItemResults from "../components/ItemResults";
 import renderer from "react-test-renderer";
 import data from "./dataSets/items.json";
 
-//testing data
-// const id = data.id;
-// const src = data.src;
-// const title = data.title;
-// const amount = data.price.amount;
-// const currency = data.price.currency;
-// const decimals = data.price.decimals;
-// const free_shipping = data.free_shipping;
-// const state = data.state;
-
+// data
 const {id, src, title, free_shipping, state} = data;
 const {amount, currency, decimals} = data.price;
 
+// test
 describe("Snapshot test:", () => {
   it("ItemResults render correctly", () => {
     const div = renderer

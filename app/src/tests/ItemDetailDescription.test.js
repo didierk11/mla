@@ -4,7 +4,7 @@ import ItemDetailDescription from "../components/ItemDetailDescription";
 import renderer from "react-test-renderer";
 import data from "./dataSets/items.json";
 
-//testing data
+// data
 const desc = data.description;
 
 describe("Snapshot test:", () => {
@@ -14,6 +14,7 @@ describe("Snapshot test:", () => {
   });
 });
 
+// test
 describe("Smoke test:", () => {
   it("ItemDetailDescription render without crashing", () => {
     const div = document.createElement("div");
